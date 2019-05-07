@@ -15,6 +15,7 @@
 		9A050DF22281732100806F88 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DF12281732100806F88 /* MarkdownDocument.swift */; };
 		9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */; };
 		9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
+		5273915D2281E480003370D6 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9A050DF12281732100806F88 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewController.swift; sourceTree = "<group>"; };
+		5273915C2281E480003370D6 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		04745C37D9CED70D36DBB521 /* Pods-Mark Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.debug.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,8 +52,15 @@
 				04745C37D9CED70D36DBB521 /* Pods-Mark Viewer.debug.xcconfig */,
 				545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5273915B2281E444003370D6 /* Markdown View */ = {
+			isa = PBXGroup;
+			children = (
+				5273915C2281E480003370D6 /* MarkdownView.swift */,
+			);
+			path = "Markdown View";
 			sourceTree = "<group>";
 		};
 		7AA06DC8B4B0FF69F236277D /* Frameworks */ = {
@@ -83,7 +92,8 @@
 		9A050DEA2281732100806F88 /* Mark Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				9A050E012281772200806F88 /* Document Viewer */,
+				9A050E012281772200806F88 /* Document View Controller */,
+				5273915B2281E444003370D6 /* Markdown View */,
 				9A050E022281776800806F88 /* Supporting Files */,
 				9A050DEB2281732100806F88 /* AppDelegate.swift */,
 				9A050DFB2281732200806F88 /* Info.plist */,
@@ -91,14 +101,14 @@
 			path = "Mark Viewer";
 			sourceTree = "<group>";
 		};
-		9A050E012281772200806F88 /* Document Viewer */ = {
+		9A050E012281772200806F88 /* Document View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9A050DF12281732100806F88 /* MarkdownDocument.swift */,
 				9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */,
 				9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */,
 			);
-			path = "Document Viewer";
+			path = "Document View Controller";
 			sourceTree = "<group>";
 		};
 		9A050E022281776800806F88 /* Supporting Files */ = {
@@ -235,6 +245,7 @@
 				9A050DF22281732100806F88 /* MarkdownDocument.swift in Sources */,
 				9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */,
 				9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */,
+				5273915D2281E480003370D6 /* MarkdownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,13 +7,12 @@
 //
 
 import UIKit
+import Down
 
 class MarkdownDocumentViewController: UIViewController {
-    
-    @IBOutlet weak var documentNameLabel: UILabel!
-    
+    @IBOutlet private weak var webView: DownView!
     var document: MarkdownDocument?
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -21,7 +20,10 @@ class MarkdownDocumentViewController: UIViewController {
         document?.open(completionHandler: { (success) in
             if success {
                 // Display the content of the document, e.g.:
-                self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
+                guard let html = self.document?.htmlString else {
+                    return
+                }
+                self.webView.loadHTMLString(html, baseURL: nil)
             } else {
                 // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
             }
