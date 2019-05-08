@@ -28,20 +28,14 @@ final class MarkdownDocumentViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Access the document
-        document?.open(completionHandler: { (success) in
-            if success {
-                // Display the content of the document, e.g.:
-                guard let rawString = self.document?.rawString else {
-                    return
-                }
-                self.markdownView.update(markdownString: rawString)
-                self.title = self.document?.fileURL.lastPathComponent
-            } else {
-                // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
-            }
-        })
+
+        guard let doc = document else {
+            fatalError("*** No Document Found! ***")
+        }
+        assert(doc.documentState.contains(.normal), "*** Open the document before displaying it. ***")
+
+        markdownView.update(markdownString: doc.rawString)
+        title = doc.fileURL.lastPathComponent
     }
     
     func closeDocumentViewController() {

@@ -26,6 +26,7 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
 
         let transitionController = self.transitionController(forDocumentURL: documentURL)
         transitionController.targetView = coordinator.view
+        transitionController.loadingProgress = doc.progress
         coordinator.transitionController = transitionController
 
         doc.open { [weak self] (success) in
@@ -51,27 +52,18 @@ extension MarkdownDocumentBrowserViewController: UIDocumentBrowserViewController
         presentDocument(at: sourceURL)
     }
 
-    ///
-    /// !!! Not Implement Yet !!!
-    ///
-//    func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-//        let newDocumentURL: URL? = nil
-//
-//        // Set the URL for the new document here. Optionally, you can present a template chooser before calling the importHandler.
-//        // Make sure the importHandler is always called, even if the user cancels the creation request.
-//        if newDocumentURL != nil {
-//            importHandler(newDocumentURL, .move)
-//        } else {
-//            importHandler(nil, .none)
-//        }
-//    }
-//
-//    func documentBrowser(_ controller: UIDocumentBrowserViewController, didImportDocumentAt sourceURL: URL, toDestinationURL destinationURL: URL) {
-//        // Present the MarkdownDocument View Controller for the new newly created document
-//        presentDocument(at: destinationURL)
-//    }
-//
-//    func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
-//        // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
-//    }
+    func documentBrowser(_ controller: UIDocumentBrowserViewController, didImportDocumentAt sourceURL: URL, toDestinationURL destinationURL: URL) {
+        presentDocument(at: destinationURL)
+    }
+
+    func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
+        let alert = UIAlertController(
+            title: "Unable to Import Document",
+            message: "An error occurred while trying to import a document: \(error?.localizedDescription ?? "Unknown Error")",
+            preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+
+        alert.addAction(action)
+        controller.present(alert, animated: true, completion: nil)
+    }
 }
