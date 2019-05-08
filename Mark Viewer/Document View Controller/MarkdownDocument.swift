@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Down
 
 enum MarkdownDocumentError: Error {
     case unableToParseText
@@ -16,13 +15,6 @@ enum MarkdownDocumentError: Error {
 
 final class MarkdownDocument: UIDocument {
     private(set) var rawString = ""
-    var htmlString: String {
-        get {
-            let down = Down(markdownString: rawString)
-            let html = try? down.toHTML()
-            return html ?? ""
-        }
-    }
 
     override func contents(forType typeName: String) throws -> Any {
         guard let data = rawString.data(using: .utf8) else {

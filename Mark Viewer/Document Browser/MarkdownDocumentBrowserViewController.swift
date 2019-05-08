@@ -8,29 +8,28 @@
 
 import UIKit
 
-
-class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewController {
+final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         delegate = self
-        
         allowsDocumentCreation = false
         allowsPickingMultipleItems = false
-        
-        // Update the style of the UIDocumentBrowserViewController
-        // browserUserInterfaceStyle = .dark
-        // view.tintColor = .white
-        
-        // Specify the allowed content types of your application via the Info.plist.
     }
 
     // MARK: MarkdownDocument Presentation
     func presentDocument(at documentURL: URL) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let documentViewController = storyBoard.instantiateViewController(withIdentifier: "MarkdownDocumentViewController") as! MarkdownDocumentViewController
-        documentViewController.document = MarkdownDocument(fileURL: documentURL)
-        present(documentViewController, animated: true, completion: nil)
+        let doc = MarkdownDocument(fileURL: documentURL)
+        let coordinator = MarkdownDocumentViewCoordinator(document: doc)
+        coordinator.delegate = self
+        present(coordinator, animated: true, completion: nil)
+    }
+}
+
+// MARK: MarkdownDocumentViewCoordinatorDelegate
+extension MarkdownDocumentBrowserViewController: MarkdownDocumentViewCoordinatorDelegate {
+    func coordinatorDidFinish(_ coordinator: MarkdownDocumentViewCoordinator) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -38,9 +37,6 @@ class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewController {
 extension MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControllerDelegate {
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]) {
         guard let sourceURL = documentURLs.first else { return }
-
-        // Present the MarkdownDocument View Controller for the first document that was picked.
-        // If you support picking multiple items, make sure you handle them all.
         presentDocument(at: sourceURL)
     }
 

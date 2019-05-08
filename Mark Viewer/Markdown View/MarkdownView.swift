@@ -9,8 +9,12 @@
 import UIKit
 import Down
 
-class MarkdownView: UIView {
+final class MarkdownView: UIView {
     private var markdownView: DownView!
+
+    override convenience init(frame: CGRect) {
+        self.init(frame: frame, markdownString: "")
+    }
 
     init(frame: CGRect, markdownString: String) {
         super.init(frame: frame)
