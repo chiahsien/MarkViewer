@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A050DEC2281732100806F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEB2281732100806F88 /* AppDelegate.swift */; };
 		9A050DF72281732200806F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF62281732200806F88 /* Assets.xcassets */; };
+		9A943CDE2282D72900F332AE /* Default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* Default.bundle */; };
 		9A050DFA2281732200806F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF82281732200806F88 /* LaunchScreen.storyboard */; };
 		4BF21E9ECC51FE5F23B32FE6 /* libPods-Mark Viewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 661B6C968024991AA4FDFB58 /* libPods-Mark Viewer.a */; };
 		9A050DF52281732100806F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF32281732100806F88 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		9A050DF92281732200806F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A050DEB2281732100806F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A050DF62281732200806F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A943CDD2282D72900F332AE /* Default.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Default.bundle; sourceTree = "<group>"; };
 		9A050DFB2281732200806F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		661B6C968024991AA4FDFB58 /* libPods-Mark Viewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mark Viewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A050DE82281732100806F88 /* Mark Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 		5273915B2281E444003370D6 /* Markdown View */ = {
 			isa = PBXGroup;
 			children = (
+				9A8212A72282D6B4009B5AE5 /* Theme */,
 				5273915C2281E480003370D6 /* MarkdownView.swift */,
 			);
 			path = "Markdown View";
@@ -135,6 +138,14 @@
 			path = "Document Browser";
 			sourceTree = "<group>";
 		};
+		9A8212A72282D6B4009B5AE5 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9A943CDD2282D72900F332AE /* Default.bundle */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A050DF72281732200806F88 /* Assets.xcassets in Resources */,
+				9A943CDE2282D72900F332AE /* Default.bundle in Resources */,
 				9A050DFA2281732200806F88 /* LaunchScreen.storyboard in Resources */,
 				9A050DF52281732100806F88 /* Main.storyboard in Resources */,
 			);

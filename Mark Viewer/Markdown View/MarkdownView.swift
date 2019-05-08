@@ -18,7 +18,11 @@ final class MarkdownView: UIView {
 
     init(frame: CGRect, markdownString: String) {
         super.init(frame: frame)
-        guard let mdView = try? DownView(frame: frame, markdownString: markdownString) else {
+        var bundle: Bundle?
+        if let url = Bundle.main.url(forResource: "Default", withExtension: "bundle") {
+            bundle = Bundle(url: url)
+        }
+        guard let mdView = try? DownView(frame: frame, markdownString: markdownString, templateBundle: bundle) else {
             return
         }
 
