@@ -13,6 +13,7 @@
 		4BF21E9ECC51FE5F23B32FE6 /* libPods-Mark Viewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 661B6C968024991AA4FDFB58 /* libPods-Mark Viewer.a */; };
 		9A050DF52281732100806F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF32281732100806F88 /* Main.storyboard */; };
 		9A050DF22281732100806F88 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DF12281732100806F88 /* MarkdownDocument.swift */; };
+		9A8212A52282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A42282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift */; };
 		9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */; };
 		9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
 		9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */; };
@@ -28,6 +29,7 @@
 		661B6C968024991AA4FDFB58 /* libPods-Mark Viewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mark Viewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A050DE82281732100806F88 /* Mark Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A050DF12281732100806F88 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
+		9A8212A42282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentBrowserTransitioningDelegate.swift; sourceTree = "<group>"; };
 		9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewController.swift; sourceTree = "<group>"; };
 		9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewCoordinator.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		9A8212A3228280CC009B5AE5 /* Document Browser */ = {
 			isa = PBXGroup;
 			children = (
+				9A8212A42282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift */,
 				9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */,
 			);
 			path = "Document Browser";
@@ -254,6 +257,7 @@
 			files = (
 				9A050DEC2281732100806F88 /* AppDelegate.swift in Sources */,
 				9A050DF22281732100806F88 /* MarkdownDocument.swift in Sources */,
+				9A8212A52282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift in Sources */,
 				9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */,
 				9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */,
 				9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */,
