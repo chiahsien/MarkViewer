@@ -22,7 +22,18 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
         let doc = MarkdownDocument(fileURL: documentURL)
         let coordinator = MarkdownDocumentViewCoordinator(document: doc)
         coordinator.delegate = self
-        present(coordinator, animated: true, completion: nil)
+        coordinator.loadViewIfNeeded()
+
+        let transitionController = self.transitionController(forDocumentURL: documentURL)
+        transitionController.targetView = coordinator.view
+        coordinator.transitionController = transitionController
+
+        doc.open { [weak self] (success) in
+            guard success else {
+                fatalError("*** Unable to open the text or markdown file ***")
+            }
+            self?.present(coordinator, animated: true, completion: nil)
+        }
     }
 }
 

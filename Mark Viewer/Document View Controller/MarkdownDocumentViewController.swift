@@ -9,8 +9,8 @@
 import UIKit
 
 final class MarkdownDocumentViewController: UIViewController {
-    var document: MarkdownDocument?
     private var markdownView: MarkdownView!
+    var document: MarkdownDocument?
 
     override func viewDidLoad() {
         super.viewDidLoad()

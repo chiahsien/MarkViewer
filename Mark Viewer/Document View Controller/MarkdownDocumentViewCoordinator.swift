@@ -15,8 +15,22 @@ protocol MarkdownDocumentViewCoordinatorDelegate: AnyObject {
 final class MarkdownDocumentViewCoordinator: UIViewController {
     private var document: MarkdownDocument!
     private var nav: UINavigationController!
+    private var browserTransition: MarkdownDocumentBrowserTransitioningDelegate?
 
     weak var delegate: MarkdownDocumentViewCoordinatorDelegate?
+    var transitionController: UIDocumentBrowserTransitionController? {
+        didSet {
+            if let controller = transitionController {
+                modalPresentationStyle = .custom
+                browserTransition = MarkdownDocumentBrowserTransitioningDelegate(withTransitionController: controller)
+                transitioningDelegate = browserTransition
+            } else {
+                modalPresentationStyle = .none
+                browserTransition = nil
+                transitioningDelegate = nil
+            }
+        }
+    }
 
     init(document: MarkdownDocument) {
         self.document = document
