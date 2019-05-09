@@ -17,6 +17,7 @@
 		9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */; };
 		9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
 		9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */; };
+		9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		5273915D2281E480003370D6 /* MarkdownWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownWrapperView.swift */; };
 		95224EF241149B83DCA872A1 /* Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewController.swift; sourceTree = "<group>"; };
 		9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewCoordinator.swift; sourceTree = "<group>"; };
+		9AE8745522840B4D00193D53 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		5273915C2281E480003370D6 /* MarkdownWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownWrapperView.swift; sourceTree = "<group>"; };
 		04745C37D9CED70D36DBB521 /* Pods-Mark Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.debug.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				9A8212A72282D6B4009B5AE5 /* Theme */,
+				9AE8745522840B4D00193D53 /* MarkdownView.swift */,
 				5273915C2281E480003370D6 /* MarkdownWrapperView.swift */,
 			);
 			path = "Markdown View";
@@ -275,6 +278,7 @@
 				9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */,
 				9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */,
 				9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */,
+				9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */,
 				5273915D2281E480003370D6 /* MarkdownWrapperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
