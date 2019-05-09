@@ -49,8 +49,6 @@ final class MarkdownDocumentViewController: UIViewController {
             }
             guard let self = self, let doc = doc else { return }
             self.markdownView.update(markdownString: doc.rawString)
-            let title = doc.fileURL.lastPathComponent.prefix(30)
-            self.title = String(title)
         }
     }
 

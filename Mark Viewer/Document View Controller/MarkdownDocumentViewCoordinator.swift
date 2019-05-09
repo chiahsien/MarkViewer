@@ -54,13 +54,21 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
         view.addSubview(nav.view)
         nav.didMove(toParent: self)
 
-        let doneItem = createDoneItem()
-        vc.navigationItem.rightBarButtonItem = doneItem
+        createNavigationItemsFor(viewController: vc)
     }
 
-    private func createDoneItem() -> UIBarButtonItem {
-        let item = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-        return item
+    private func createNavigationItemsFor(viewController: UIViewController) {
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        viewController.navigationItem.leftBarButtonItem = doneItem
+
+        let titleLabel = UILabel()
+        titleLabel.text = document.fileURL.lastPathComponent
+        titleLabel.lineBreakMode = .byTruncatingTail
+        viewController.navigationItem.titleView = titleLabel
+
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 60
+        viewController.navigationItem.rightBarButtonItems = [space]
     }
 
     @objc private func done() {
