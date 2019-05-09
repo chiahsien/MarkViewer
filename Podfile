@@ -1,6 +1,7 @@
 platform :ios, '11.0'
 inhibit_all_warnings!
+use_frameworks!
 
 target 'Mark Viewer' do
-    pod 'Down', '0.8.1'
+    pod 'EFMarkdown', '5.0.0'
 end

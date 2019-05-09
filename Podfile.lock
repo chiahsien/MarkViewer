@@ -1,16 +1,20 @@
 PODS:
-  - Down (0.8.1)
+  - EFCMark (0.0.2)
+  - EFMarkdown (5.0.0):
+    - EFCMark (= 0.0.2)
 
 DEPENDENCIES:
-  - Down (= 0.8.1)
+  - EFMarkdown (= 5.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Down
+    - EFCMark
+    - EFMarkdown
 
 SPEC CHECKSUMS:
-  Down: 3aa5ab1aee1a2ffff3c07291e9210dac5cc462cd
+  EFCMark: 78fb32ed4107c8efc640ad9d20ac31cd44ce2046
+  EFMarkdown: 915ff03080b95efcc737650991397322d661f1d9
 
-PODFILE CHECKSUM: c78a6bad06419bd48d9bc18c9711f38906a6e062
+PODFILE CHECKSUM: 93430193ed8f4ee3ccb5a8987b659789dfefc261
 
 COCOAPODS: 1.6.1
