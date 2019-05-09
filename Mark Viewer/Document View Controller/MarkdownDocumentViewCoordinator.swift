@@ -62,8 +62,6 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
     }
 
     @objc private func done() {
-        guard let vc = nav.viewControllers.first as? MarkdownDocumentViewController else { return }
-        vc.closeDocumentViewController()
         delegate?.coordinatorDidFinish(self)
     }
 }

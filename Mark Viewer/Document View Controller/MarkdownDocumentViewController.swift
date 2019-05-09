@@ -32,13 +32,20 @@ final class MarkdownDocumentViewController: UIViewController {
         guard let doc = document else {
             fatalError("*** No Document Found! ***")
         }
-        assert(doc.documentState.contains(.normal), "*** Open the document before displaying it. ***")
 
-        markdownView.update(markdownString: doc.rawString)
-        title = doc.fileURL.lastPathComponent
+        doc.open { [weak self, weak doc] (success) in
+            guard success else {
+                fatalError("*** Unable to open the text or markdown file ***")
+            }
+            guard let self = self, let doc = doc else { return }
+            self.markdownView.update(markdownString: doc.rawString)
+            let title = doc.fileURL.lastPathComponent.prefix(30)
+            self.title = String(title)
+        }
     }
-    
-    func closeDocumentViewController() {
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.document?.close(completionHandler: nil)
     }
 }

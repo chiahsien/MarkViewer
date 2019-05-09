@@ -29,12 +29,7 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
         transitionController.loadingProgress = doc.progress
         coordinator.transitionController = transitionController
 
-        doc.open { [weak self] (success) in
-            guard success else {
-                fatalError("*** Unable to open the text or markdown file ***")
-            }
-            self?.present(coordinator, animated: true, completion: nil)
-        }
+        present(coordinator, animated: true, completion: nil)
     }
 }
 
