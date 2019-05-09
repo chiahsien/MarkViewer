@@ -9,14 +9,14 @@
 import UIKit
 
 final class MarkdownDocumentViewController: UIViewController {
-    private var markdownView: MarkdownView!
+    private var markdownView: MarkdownWrapperView!
     var document: MarkdownDocument?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        markdownView = MarkdownView(frame: .zero)
+        markdownView = MarkdownWrapperView(frame: .zero)
         view.addSubview(markdownView)
 
         markdownView.translatesAutoresizingMaskIntoConstraints = false

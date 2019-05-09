@@ -9,7 +9,7 @@
 import UIKit
 import EFMarkdown
 
-final class MarkdownView: UIView {
+final class MarkdownWrapperView: UIView {
     private var markdownView: EFMarkdownView!
 
     override convenience init(frame: CGRect) {
