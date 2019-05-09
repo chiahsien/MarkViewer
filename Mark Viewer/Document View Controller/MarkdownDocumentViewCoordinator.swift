@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 protocol MarkdownDocumentViewCoordinatorDelegate: AnyObject {
     func coordinatorDidFinish(_ coordinator: MarkdownDocumentViewCoordinator)
@@ -46,6 +47,7 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
 
         let vc = MarkdownDocumentViewController()
         vc.document = document
+        vc.delegate = self
 
         nav = UINavigationController(rootViewController: vc)
         addChild(nav)
@@ -63,5 +65,12 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
 
     @objc private func done() {
         delegate?.coordinatorDidFinish(self)
+    }
+}
+
+extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegate {
+    func documentViewController(_ viewController: MarkdownDocumentViewController, didClickOn url: URL) {
+        let safari = SFSafariViewController(url: url)
+        nav.present(safari, animated: true, completion: nil)
     }
 }

@@ -10,6 +10,11 @@ import UIKit
 
 final class MarkdownWrapperView: UIView {
     private var markdownView: MarkdownView!
+    var openURLHandler: ((URL) -> Void)? {
+        didSet {
+            markdownView.openURLHandler = openURLHandler
+        }
+    }
 
     override convenience init(frame: CGRect) {
         self.init(frame: frame, markdownString: "")

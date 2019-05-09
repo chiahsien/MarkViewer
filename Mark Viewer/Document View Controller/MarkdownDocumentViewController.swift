@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol MarkdownDocumentViewControllerDelegate: AnyObject {
+    func documentViewController(_ viewController: MarkdownDocumentViewController, didClickOn url: URL)
+}
+
 final class MarkdownDocumentViewController: UIViewController {
     private var markdownView: MarkdownWrapperView!
     var document: MarkdownDocument?
+    weak var delegate: MarkdownDocumentViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,11 @@ final class MarkdownDocumentViewController: UIViewController {
         markdownView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         markdownView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         markdownView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+
+        markdownView.openURLHandler = { [weak self] url in
+            guard let self = self else { return }
+            self.delegate?.documentViewController(self, didClickOn: url)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

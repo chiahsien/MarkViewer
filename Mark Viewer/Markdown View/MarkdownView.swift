@@ -15,18 +15,18 @@ final class MarkdownView: WKWebView {
     private lazy var baseURL: URL = {
         return self.bundle.url(forResource: "index", withExtension: "html")!
     }()
+    var openURLHandler: ((URL) -> Void)?
 
-    init(frame: CGRect, openLinksInBrowser: Bool = true, templateBundle: Bundle? = nil, configuration: WKWebViewConfiguration? = nil) {
+    init(frame: CGRect, templateBundle: Bundle? = nil, configuration: WKWebViewConfiguration? = nil) {
         if let templateBundle = templateBundle {
-            self.bundle = templateBundle
+            bundle = templateBundle
         } else {
             let url = Bundle.main.url(forResource: "Default", withExtension: "bundle")!
-            self.bundle = Bundle(url: url)!
+            bundle = Bundle(url: url)!
         }
 
         super.init(frame: frame, configuration: configuration ?? WKWebViewConfiguration())
-
-        if openLinksInBrowser { navigationDelegate = self }
+        navigationDelegate = self
     }
 
     required public init?(coder: NSCoder) {
@@ -77,7 +77,7 @@ extension MarkdownView: WKNavigationDelegate {
 
     @available(iOSApplicationExtension, unavailable)
     func openURL(url: URL) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        openURLHandler?(url)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
