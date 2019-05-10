@@ -64,6 +64,7 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
         let titleLabel = UILabel()
         titleLabel.text = document.fileURL.lastPathComponent
         titleLabel.lineBreakMode = .byTruncatingTail
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         viewController.navigationItem.titleView = titleLabel
 
         let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
