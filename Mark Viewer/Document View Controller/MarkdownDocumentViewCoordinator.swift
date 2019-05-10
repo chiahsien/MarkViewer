@@ -46,8 +46,8 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
         super.viewDidLoad()
 
         let vc = MarkdownDocumentViewController()
-        vc.document = document
         vc.delegate = self
+        vc.openDocument(document, completion: nil)
 
         nav = UINavigationController(rootViewController: vc)
         addChild(nav)
@@ -72,7 +72,10 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
     }
 
     @objc private func done() {
-        delegate?.coordinatorDidFinish(self)
+        guard let docVC = nav.topViewController as? MarkdownDocumentViewController else { return }
+        docVC.closeDocument { (_) in
+            self.delegate?.coordinatorDidFinish(self)
+        }
     }
 }
 

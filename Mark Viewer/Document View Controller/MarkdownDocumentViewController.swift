@@ -14,7 +14,7 @@ protocol MarkdownDocumentViewControllerDelegate: AnyObject {
 
 final class MarkdownDocumentViewController: UIViewController {
     private var markdownView: MarkdownWrapperView!
-    var document: MarkdownDocument?
+    private var document: MarkdownDocument?
     weak var delegate: MarkdownDocumentViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -36,24 +36,19 @@ final class MarkdownDocumentViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func openDocument(_ document: MarkdownDocument, completion: ((Bool) -> Void)? = nil) {
+        self.document = document
+        loadViewIfNeeded()
 
-        guard let doc = document else {
-            fatalError("*** No Document Found! ***")
-        }
-
-        doc.open { [weak self, weak doc] (success) in
-            guard success else {
-                fatalError("*** Unable to open the text or markdown file ***")
+        document.open { (success) in
+            if success {
+                self.markdownView.update(markdownString: document.rawString)
             }
-            guard let self = self, let doc = doc else { return }
-            self.markdownView.update(markdownString: doc.rawString)
+            completion?(success)
         }
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.document?.close(completionHandler: nil)
+    func closeDocument(completion: ((Bool) -> Void)? = nil) {
+        document?.close(completionHandler: completion)
     }
 }
