@@ -9,18 +9,51 @@
 /* Begin PBXBuildFile section */
 		9A050DEC2281732100806F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEB2281732100806F88 /* AppDelegate.swift */; };
 		9A050DF72281732200806F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF62281732200806F88 /* Assets.xcassets */; };
+		9A57FCC222855D0E006A5959 /* Default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* Default.bundle */; };
 		9A943CDE2282D72900F332AE /* Default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* Default.bundle */; };
 		9A050DFA2281732200806F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF82281732200806F88 /* LaunchScreen.storyboard */; };
 		9A050DF52281732100806F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF32281732100806F88 /* Main.storyboard */; };
+		9A57FCBB22855898006A5959 /* Mark Viewer Thumbnail.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9A57FCB422855898006A5959 /* Mark Viewer Thumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9A050DF22281732100806F88 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DF12281732100806F88 /* MarkdownDocument.swift */; };
+		9A57FCC022855CC7006A5959 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DF12281732100806F88 /* MarkdownDocument.swift */; };
 		9A8212A52282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A42282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift */; };
 		9A050DEE2281732100806F88 /* MarkdownDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */; };
 		9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
+		9A57FCC122855CDB006A5959 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
 		9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */; };
+		9A57FCC322855D13006A5959 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		5273915D2281E480003370D6 /* MarkdownWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownWrapperView.swift */; };
+		9A57FCC422855D15006A5959 /* MarkdownWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownWrapperView.swift */; };
+		7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */; };
+		749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */; };
 		95224EF241149B83DCA872A1 /* Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */; };
+		9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57FCB622855898006A5959 /* ThumbnailProvider.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A57FCB922855898006A5959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A050DE02281732100806F88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A57FCB322855898006A5959;
+			remoteInfo = "Mark Viewer Thumbnail";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A57FCBF22855898006A5959 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9A57FCBB22855898006A5959 /* Mark Viewer Thumbnail.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9A050DF42281732100806F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +62,8 @@
 		9A050DF62281732200806F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A943CDD2282D72900F332AE /* Default.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Default.bundle; sourceTree = "<group>"; };
 		9A050DFB2281732200806F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A57FCB822855898006A5959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A57FCB422855898006A5959 /* Mark Viewer Thumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mark Viewer Thumbnail.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A050DE82281732100806F88 /* Mark Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A050DF12281732100806F88 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		9A8212A42282AC5C009B5AE5 /* MarkdownDocumentBrowserTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentBrowserTransitioningDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +72,16 @@
 		9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewCoordinator.swift; sourceTree = "<group>"; };
 		9AE8745522840B4D00193D53 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		5273915C2281E480003370D6 /* MarkdownWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownWrapperView.swift; sourceTree = "<group>"; };
+		B09AE8FB1250B7092CFAE181 /* Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer Thumbnail/Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig"; sourceTree = "<group>"; };
+		750F737E5661C3C5FB61694B /* Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer Thumbnail/Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig"; sourceTree = "<group>"; };
+		F5223602E0BAC853D076FA78 /* Pods-Common Pods-Mark Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer.debug.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer/Pods-Common Pods-Mark Viewer.debug.xcconfig"; sourceTree = "<group>"; };
+		ED6AEA6F80F1491127351B46 /* Pods-Common Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer/Pods-Common Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
 		04745C37D9CED70D36DBB521 /* Pods-Mark Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.debug.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
+		C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer_Thumbnail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A57FCB622855898006A5959 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +89,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */,
 				95224EF241149B83DCA872A1 /* Pods_Mark_Viewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A57FCB122855898006A5959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +108,10 @@
 		3F56CCC3A6DAF9FBF81CC6BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				B09AE8FB1250B7092CFAE181 /* Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig */,
+				750F737E5661C3C5FB61694B /* Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig */,
+				F5223602E0BAC853D076FA78 /* Pods-Common Pods-Mark Viewer.debug.xcconfig */,
+				ED6AEA6F80F1491127351B46 /* Pods-Common Pods-Mark Viewer.release.xcconfig */,
 				04745C37D9CED70D36DBB521 /* Pods-Mark Viewer.debug.xcconfig */,
 				545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */,
 			);
@@ -76,6 +131,8 @@
 		7AA06DC8B4B0FF69F236277D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */,
+				95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */,
 				BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */,
 			);
 			name = Frameworks;
@@ -86,6 +143,7 @@
 			children = (
 				7AA06DC8B4B0FF69F236277D /* Frameworks */,
 				9A050DEA2281732100806F88 /* Mark Viewer */,
+				9A57FCB522855898006A5959 /* Mark Viewer Thumbnail */,
 				3F56CCC3A6DAF9FBF81CC6BC /* Pods */,
 				9A050DE92281732100806F88 /* Products */,
 			);
@@ -94,6 +152,7 @@
 		9A050DE92281732100806F88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				9A57FCB422855898006A5959 /* Mark Viewer Thumbnail.appex */,
 				9A050DE82281732100806F88 /* Mark Viewer.app */,
 			);
 			name = Products;
@@ -132,6 +191,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9A57FCB522855898006A5959 /* Mark Viewer Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				9A57FCB822855898006A5959 /* Info.plist */,
+				9A57FCB622855898006A5959 /* ThumbnailProvider.swift */,
+			);
+			path = "Mark Viewer Thumbnail";
+			sourceTree = "<group>";
+		};
 		9A8212A3228280CC009B5AE5 /* Document Browser */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,15 +229,35 @@
 				9A050DE52281732100806F88 /* Frameworks */,
 				9A050DE62281732100806F88 /* Resources */,
 				4AA0DE6062D8030918F8957F /* [CP] Embed Pods Frameworks */,
+				9A57FCBF22855898006A5959 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A57FCBA22855898006A5959 /* PBXTargetDependency */,
 			);
 			name = "Mark Viewer";
 			productName = "Mark Viewer";
 			productReference = 9A050DE82281732100806F88 /* Mark Viewer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9A57FCB322855898006A5959 /* Mark Viewer Thumbnail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A57FCBE22855898006A5959 /* Build configuration list for PBXNativeTarget "Mark Viewer Thumbnail" */;
+			buildPhases = (
+				10C822165510EF571C0AB625 /* [CP] Check Pods Manifest.lock */,
+				9A57FCB022855898006A5959 /* Sources */,
+				9A57FCB122855898006A5959 /* Frameworks */,
+				9A57FCB222855898006A5959 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mark Viewer Thumbnail";
+			productName = "Mark Viewer Thumbnail";
+			productReference = 9A57FCB422855898006A5959 /* Mark Viewer Thumbnail.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -182,6 +270,9 @@
 				ORGANIZATIONNAME = "Nelson Tai";
 				TargetAttributes = {
 					9A050DE72281732100806F88 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					9A57FCB322855898006A5959 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -200,6 +291,7 @@
 			projectRoot = "";
 			targets = (
 				9A050DE72281732100806F88 /* Mark Viewer */,
+				9A57FCB322855898006A5959 /* Mark Viewer Thumbnail */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +305,14 @@
 				9A943CDE2282D72900F332AE /* Default.bundle in Resources */,
 				9A050DFA2281732200806F88 /* LaunchScreen.storyboard in Resources */,
 				9A050DF52281732100806F88 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A57FCB222855898006A5959 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A57FCC222855D0E006A5959 /* Default.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +334,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mark Viewer-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Common Pods-Mark Viewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10C822165510EF571C0AB625 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common Pods-Mark Viewer Thumbnail-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -249,7 +371,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Common Pods-Mark Viewer/Pods-Common Pods-Mark Viewer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EFCMark/EFCMark.framework",
 				"${BUILT_PRODUCTS_DIR}/EFMarkdown/EFMarkdown.framework",
 			);
@@ -262,7 +384,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Common Pods-Mark Viewer/Pods-Common Pods-Mark Viewer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -283,7 +405,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A57FCB022855898006A5959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A57FCC022855CC7006A5959 /* MarkdownDocument.swift in Sources */,
+				9A57FCC122855CDB006A5959 /* MarkdownDocumentViewController.swift in Sources */,
+				9A57FCC322855D13006A5959 /* MarkdownView.swift in Sources */,
+				9A57FCC422855D15006A5959 /* MarkdownWrapperView.swift in Sources */,
+				9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A57FCBA22855898006A5959 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A57FCB322855898006A5959 /* Mark Viewer Thumbnail */;
+			targetProxy = 9A57FCB922855898006A5959 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9A050DF32281732100806F88 /* Main.storyboard */ = {
@@ -423,7 +565,7 @@
 		};
 		9A050DFF2281732200806F88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04745C37D9CED70D36DBB521 /* Pods-Mark Viewer.debug.xcconfig */;
+			baseConfigurationReference = F5223602E0BAC853D076FA78 /* Pods-Common Pods-Mark Viewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,7 +584,7 @@
 		};
 		9A050E002281732200806F88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */;
+			baseConfigurationReference = ED6AEA6F80F1491127351B46 /* Pods-Common Pods-Mark Viewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +596,48 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nelson.MarkViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A57FCBC22855898006A5959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B09AE8FB1250B7092CFAE181 /* Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47RT7A89MY;
+				INFOPLIST_FILE = "Mark Viewer Thumbnail/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nelson.MarkViewer.Thumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A57FCBD22855898006A5959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 750F737E5661C3C5FB61694B /* Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47RT7A89MY;
+				INFOPLIST_FILE = "Mark Viewer Thumbnail/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nelson.MarkViewer.Thumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -476,6 +660,15 @@
 			buildConfigurations = (
 				9A050DFF2281732200806F88 /* Debug */,
 				9A050E002281732200806F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A57FCBE22855898006A5959 /* Build configuration list for PBXNativeTarget "Mark Viewer Thumbnail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A57FCBC22855898006A5959 /* Debug */,
+				9A57FCBD22855898006A5959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
