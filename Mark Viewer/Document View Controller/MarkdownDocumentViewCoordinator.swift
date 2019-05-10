@@ -78,7 +78,18 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
 
 extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegate {
     func documentViewController(_ viewController: MarkdownDocumentViewController, didClickOn url: URL) {
-        let safari = SFSafariViewController(url: url)
-        nav.present(safari, animated: true, completion: nil)
+        guard let scheme = url.scheme?.lowercased() else { return }
+
+        if scheme == "http" || scheme == "https" {
+            let safari = SFSafariViewController(url: url)
+            nav.present(safari, animated: true, completion: nil)
+        } else if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            let alert = UIAlertController(title: "Unsupported URL", message: url.absoluteString, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
