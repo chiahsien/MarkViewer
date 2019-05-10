@@ -27,7 +27,6 @@
 		9A57FCC422855D15006A5959 /* MarkdownWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownWrapperView.swift */; };
 		7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */; };
 		749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */; };
-		95224EF241149B83DCA872A1 /* Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */; };
 		9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57FCB622855898006A5959 /* ThumbnailProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		9A57FCBF22855898006A5959 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -80,7 +79,6 @@
 		545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
 		C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer_Thumbnail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A57FCB622855898006A5959 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +88,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */,
-				95224EF241149B83DCA872A1 /* Pods_Mark_Viewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +130,6 @@
 			children = (
 				C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */,
 				95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */,
-				BE339EE86B873D190B16BB7A /* Pods_Mark_Viewer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

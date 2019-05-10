@@ -17,7 +17,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.markdown</string>
+				<string>com.nelson.markdown</string>
 			</array>
 		</dict>
 	</array>
@@ -72,32 +72,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>public.markdown</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>md</string>
-					<string>MD</string>
-					<string>markdown</string>
-					<string>MARKDOWN</string>
-				</array>
-			</dict>
-		</dict>
-	</array>
-	<key>UTImportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.text</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Markdown Document</string>
-			<key>UTTypeIconFiles</key>
-			<array/>
-			<key>UTTypeIdentifier</key>
-			<string>public.markdown</string>
+			<string>com.nelson.markdown</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
