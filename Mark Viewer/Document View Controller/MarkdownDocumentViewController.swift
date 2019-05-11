@@ -17,8 +17,8 @@ final class MarkdownDocumentViewController: UIViewController {
     private var document: MarkdownDocument?
     weak var delegate: MarkdownDocumentViewControllerDelegate?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        view = UIView()
         view.backgroundColor = .white
 
         markdownView = MarkdownWrapperView(frame: .zero)
@@ -29,6 +29,10 @@ final class MarkdownDocumentViewController: UIViewController {
         markdownView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         markdownView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         markdownView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         markdownView.openURLHandler = { [weak self] url in
             guard let self = self else { return }
@@ -43,6 +47,7 @@ final class MarkdownDocumentViewController: UIViewController {
         document.open { (success) in
             if success {
                 self.markdownView.update(markdownString: document.rawString)
+                self.title = document.fileURL.lastPathComponent
             }
             completion?(success)
         }

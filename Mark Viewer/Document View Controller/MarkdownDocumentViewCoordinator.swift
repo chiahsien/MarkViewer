@@ -14,9 +14,9 @@ protocol MarkdownDocumentViewCoordinatorDelegate: AnyObject {
 }
 
 final class MarkdownDocumentViewCoordinator: UIViewController {
-    private var document: MarkdownDocument!
-    private var nav: UINavigationController!
     private var browserTransition: MarkdownDocumentBrowserTransitioningDelegate?
+    private var nav: UINavigationController!
+    private var documentVC: MarkdownDocumentViewController!
 
     weak var delegate: MarkdownDocumentViewCoordinatorDelegate?
     var transitionController: UIDocumentBrowserTransitionController? {
@@ -33,28 +33,22 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
         }
     }
 
-    init(document: MarkdownDocument) {
-        self.document = document
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc = MarkdownDocumentViewController()
-        vc.delegate = self
-        vc.openDocument(document, completion: nil)
-
-        nav = UINavigationController(rootViewController: vc)
+        documentVC = MarkdownDocumentViewController()
+        nav = UINavigationController(rootViewController: documentVC)
         addChild(nav)
         view.addSubview(nav.view)
         nav.didMove(toParent: self)
+    }
 
-        createNavigationItemsFor(viewController: vc)
+    func openDocument(_ document: MarkdownDocument, completion: ((Bool) -> Void)? = nil) {
+        documentVC.openDocument(document) { [unowned self] (success) in
+            self.documentVC.delegate = self
+            self.createNavigationItemsFor(viewController: self.documentVC)
+            completion?(success)
+        }
     }
 
     private func createNavigationItemsFor(viewController: UIViewController) {
@@ -62,7 +56,7 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
         viewController.navigationItem.leftBarButtonItem = doneItem
 
         let titleLabel = UILabel()
-        titleLabel.text = document.fileURL.lastPathComponent
+        titleLabel.text = viewController.title
         titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         viewController.navigationItem.titleView = titleLabel
@@ -73,8 +67,7 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
     }
 
     @objc private func done() {
-        guard let docVC = nav.topViewController as? MarkdownDocumentViewController else { return }
-        docVC.closeDocument { (_) in
+        documentVC.closeDocument { [unowned self] (_) in
             self.delegate?.coordinatorDidFinish(self)
         }
     }
@@ -86,14 +79,14 @@ extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegat
 
         if scheme == "http" || scheme == "https" {
             let safari = SFSafariViewController(url: url)
-            nav.present(safari, animated: true, completion: nil)
+            present(safari, animated: true, completion: nil)
         } else if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             let alert = UIAlertController(title: "Unsupported URL", message: url.absoluteString, preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
     }
 }

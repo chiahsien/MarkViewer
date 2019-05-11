@@ -19,17 +19,19 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
 
     // MARK: MarkdownDocument Presentation
     func presentDocument(at documentURL: URL) {
-        let doc = MarkdownDocument(fileURL: documentURL)
-        let coordinator = MarkdownDocumentViewCoordinator(document: doc)
-        coordinator.delegate = self
+        let coordinator = MarkdownDocumentViewCoordinator()
         coordinator.loadViewIfNeeded()
 
         let transitionController = self.transitionController(forDocumentURL: documentURL)
         transitionController.targetView = coordinator.view
-        transitionController.loadingProgress = doc.progress
         coordinator.transitionController = transitionController
 
-        present(coordinator, animated: true, completion: nil)
+        let doc = MarkdownDocument(fileURL: documentURL)
+        coordinator.openDocument(doc) { (success) in
+            guard success else { return }
+            coordinator.delegate = self
+            self.present(coordinator, animated: true, completion: nil)
+        }
     }
 }
 
@@ -59,6 +61,6 @@ extension MarkdownDocumentBrowserViewController: UIDocumentBrowserViewController
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 
         alert.addAction(action)
-        controller.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }
