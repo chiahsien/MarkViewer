@@ -6,7 +6,6 @@
 //  Copyright © 2019 Nelson Tai. All rights reserved.
 //
 
-import UIKit
 import WebKit
 import EFMarkdown
 
@@ -17,15 +16,11 @@ final class MarkdownView: WKWebView {
     }()
     var openURLHandler: ((URL) -> Void)?
 
-    init(frame: CGRect, templateBundle: Bundle? = nil, configuration: WKWebViewConfiguration? = nil) {
-        if let templateBundle = templateBundle {
-            bundle = templateBundle
-        } else {
-            let url = Bundle.main.url(forResource: "Default", withExtension: "bundle")!
-            bundle = Bundle(url: url)!
-        }
+    init(frame: CGRect) {
+        let url = Bundle.main.url(forResource: "Default", withExtension: "bundle")!
+        bundle = Bundle(url: url)!
 
-        super.init(frame: frame, configuration: configuration ?? WKWebViewConfiguration())
+        super.init(frame: frame, configuration: WKWebViewConfiguration())
         navigationDelegate = self
     }
 
@@ -33,8 +28,8 @@ final class MarkdownView: WKWebView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(markdownString: String) throws {
-        try loadHTMLView(markdownString)
+    func update(markdownString: String) {
+        try? loadHTMLView(markdownString)
     }
 }
 

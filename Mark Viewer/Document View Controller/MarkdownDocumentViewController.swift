@@ -13,7 +13,7 @@ protocol MarkdownDocumentViewControllerDelegate: AnyObject {
 }
 
 final class MarkdownDocumentViewController: UIViewController {
-    private var markdownView: MarkdownWrapperView!
+    private var markdownView: MarkdownView!
     private var document: MarkdownDocument?
     weak var delegate: MarkdownDocumentViewControllerDelegate?
 
@@ -21,7 +21,7 @@ final class MarkdownDocumentViewController: UIViewController {
         view = UIView()
         view.backgroundColor = .white
 
-        markdownView = MarkdownWrapperView(frame: .zero)
+        markdownView = MarkdownView(frame: .zero)
         view.addSubview(markdownView)
 
         markdownView.translatesAutoresizingMaskIntoConstraints = false

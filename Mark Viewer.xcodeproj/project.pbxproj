@@ -23,8 +23,6 @@
 		9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */; };
 		9A57FCC322855D13006A5959 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
-		5273915D2281E480003370D6 /* MarkdownWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownWrapperView.swift */; };
-		9A57FCC422855D15006A5959 /* MarkdownWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273915C2281E480003370D6 /* MarkdownWrapperView.swift */; };
 		7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */; };
 		749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */; };
 		9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57FCB622855898006A5959 /* ThumbnailProvider.swift */; };
@@ -70,7 +68,6 @@
 		9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewController.swift; sourceTree = "<group>"; };
 		9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewCoordinator.swift; sourceTree = "<group>"; };
 		9AE8745522840B4D00193D53 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
-		5273915C2281E480003370D6 /* MarkdownWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownWrapperView.swift; sourceTree = "<group>"; };
 		B09AE8FB1250B7092CFAE181 /* Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer Thumbnail/Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig"; sourceTree = "<group>"; };
 		750F737E5661C3C5FB61694B /* Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer Thumbnail/Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig"; sourceTree = "<group>"; };
 		F5223602E0BAC853D076FA78 /* Pods-Common Pods-Mark Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer.debug.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer/Pods-Common Pods-Mark Viewer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +117,6 @@
 			children = (
 				9A8212A72282D6B4009B5AE5 /* Theme */,
 				9AE8745522840B4D00193D53 /* MarkdownView.swift */,
-				5273915C2281E480003370D6 /* MarkdownWrapperView.swift */,
 			);
 			path = "Markdown View";
 			sourceTree = "<group>";
@@ -397,7 +393,6 @@
 				9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */,
 				9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */,
 				9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */,
-				5273915D2281E480003370D6 /* MarkdownWrapperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +403,6 @@
 				9A57FCC022855CC7006A5959 /* MarkdownDocument.swift in Sources */,
 				9A57FCC122855CDB006A5959 /* MarkdownDocumentViewController.swift in Sources */,
 				9A57FCC322855D13006A5959 /* MarkdownView.swift in Sources */,
-				9A57FCC422855D15006A5959 /* MarkdownWrapperView.swift in Sources */,
 				9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
