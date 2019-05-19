@@ -12,6 +12,9 @@ import EFMarkdown
 final class MarkdownView: WKWebView {
     enum SyntaxHighlight: String {
         case google = "Google Code"
+        case oneDark = "Atom One Dark"
+        case darcula = "Darcula"
+        case github = "Github"
     }
 
     private let bundle: Bundle
