@@ -14,6 +14,7 @@ final class MarkdownView: WKWebView {
     private lazy var baseURL: URL = {
         return self.bundle.url(forResource: "index", withExtension: "html")!
     }()
+    private var markdownToHTMLString: String?
     var openURLHandler: ((URL) -> Void)?
 
     init(frame: CGRect) {
@@ -29,14 +30,15 @@ final class MarkdownView: WKWebView {
     }
 
     func update(markdownString: String) {
-        try? loadHTMLView(markdownString)
+        markdownToHTMLString = try? EFMarkdown().markdownToHTML(markdownString, options: [.default, .smart, .githubPreLang])
+        try? loadHTMLView(markdownToHTMLString)
     }
 }
 
 // MARK: - Private API
 private extension MarkdownView {
-    func loadHTMLView(_ markdownString: String) throws {
-        let htmlString = try EFMarkdown().markdownToHTML(markdownString, options: [.default, .smart, .githubPreLang])
+    func loadHTMLView(_ htmlString: String?) throws {
+        guard let htmlString = htmlString else { return }
         let pageHTMLString = try htmlFromTemplate(htmlString)
 
         loadHTMLString(pageHTMLString, baseURL: baseURL)
