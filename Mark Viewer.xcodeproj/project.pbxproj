@@ -25,6 +25,7 @@
 		9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */; };
 		749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */; };
+		529F427E229155990021B180 /* SyntaxHighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F427D229155990021B180 /* SyntaxHighlightViewController.swift */; };
 		9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57FCB622855898006A5959 /* ThumbnailProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
 		C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer_Thumbnail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		529F427D229155990021B180 /* SyntaxHighlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlightViewController.swift; sourceTree = "<group>"; };
 		9A57FCB622855898006A5959 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,14 @@
 			path = "Markdown View";
 			sourceTree = "<group>";
 		};
+		529F427C2291553D0021B180 /* Setting View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				529F427D229155990021B180 /* SyntaxHighlightViewController.swift */,
+			);
+			path = "Setting View Controller";
+			sourceTree = "<group>";
+		};
 		7AA06DC8B4B0FF69F236277D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				9A8212A3228280CC009B5AE5 /* Document Browser */,
 				9A050E012281772200806F88 /* Document View Controller */,
 				5273915B2281E444003370D6 /* Markdown View */,
+				529F427C2291553D0021B180 /* Setting View Controller */,
 				9A050E022281776800806F88 /* Supporting Files */,
 				9A050DEB2281732100806F88 /* AppDelegate.swift */,
 				9A050DFB2281732200806F88 /* Info.plist */,
@@ -385,6 +396,7 @@
 				9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */,
 				9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */,
 				9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */,
+				529F427E229155990021B180 /* SyntaxHighlightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

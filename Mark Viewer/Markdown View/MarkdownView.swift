@@ -10,7 +10,7 @@ import WebKit
 import EFMarkdown
 
 final class MarkdownView: WKWebView {
-    enum SyntaxHighlight: String {
+    enum SyntaxHighlight: String, CaseIterable {
         case google = "Google Code"
         case oneDark = "Atom One Dark"
         case darcula = "Darcula"
@@ -47,6 +47,12 @@ final class MarkdownView: WKWebView {
         if self.syntaxHighlight == syntaxHighlight { return }
         self.syntaxHighlight = syntaxHighlight
         try? loadHTMLView(markdownToHTMLString, syntaxHighlight: syntaxHighlight)
+    }
+
+    func loadCodeSample() {
+        let sampleURL = bundle.url(forResource: "code", withExtension: "md")!
+        let markdown = try? String(contentsOf: sampleURL, encoding: .utf8)
+        update(markdownString: markdown ?? "")
     }
 }
 
