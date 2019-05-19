@@ -23,6 +23,7 @@ final class MarkdownView: WKWebView {
     }()
     private var markdownToHTMLString: String?
     private var syntaxHighlight: SyntaxHighlight = .google
+    private var lastContentOffset = CGPoint.zero
 
     var openURLHandler: ((URL) -> Void)?
 
@@ -39,6 +40,7 @@ final class MarkdownView: WKWebView {
     }
 
     func update(markdownString: String) {
+        lastContentOffset = .zero
         markdownToHTMLString = try? EFMarkdown().markdownToHTML(markdownString, options: [.default, .smart, .githubPreLang])
         try? loadHTMLView(markdownToHTMLString, syntaxHighlight: syntaxHighlight)
     }
@@ -46,6 +48,7 @@ final class MarkdownView: WKWebView {
     func change(syntaxHighlight: SyntaxHighlight) {
         if self.syntaxHighlight == syntaxHighlight { return }
         self.syntaxHighlight = syntaxHighlight
+        lastContentOffset = scrollView.contentOffset
         try? loadHTMLView(markdownToHTMLString, syntaxHighlight: syntaxHighlight)
     }
 
@@ -101,7 +104,11 @@ extension MarkdownView: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        /// Do nothing.
+        /// Restore last content offset.
+        guard lastContentOffset != .zero else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.03) {
+            self.scrollView.setContentOffset(self.lastContentOffset, animated: false)
+        }
     }
 }
 
