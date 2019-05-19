@@ -18,7 +18,7 @@ final class MarkdownView: WKWebView {
     var openURLHandler: ((URL) -> Void)?
 
     init(frame: CGRect) {
-        let url = Bundle.main.url(forResource: "Default", withExtension: "bundle")!
+        let url = Bundle.main.url(forResource: "MarkdownView", withExtension: "bundle")!
         bundle = Bundle(url: url)!
 
         super.init(frame: frame, configuration: WKWebViewConfiguration())
