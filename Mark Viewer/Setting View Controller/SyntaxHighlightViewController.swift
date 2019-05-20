@@ -15,11 +15,18 @@ final class SyntaxHighlightViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Style")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 40
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         return tableView
     }()
     private lazy var styles: [String] = {
         let styles = MarkdownView.SyntaxHighlight.allCases.map { $0.rawValue }.sorted()
         return styles
+    }()
+    private lazy var selectedStyle: String = {
+        let style = UserDefaults.standard.string(forKey: SettingKey.syntaxHighlight) ?? MarkdownView.SyntaxHighlight.github.rawValue
+        return style
     }()
 
     override func viewDidLoad() {
@@ -32,6 +39,17 @@ final class SyntaxHighlightViewController: UIViewController {
         markdownView.loadCodeSample()
 
         setupConstraints()
+
+        if let index = styles.firstIndex(of: selectedStyle) {
+            tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .middle)
+            markdownView.change(syntaxHighlight: MarkdownView.SyntaxHighlight(rawValue: selectedStyle)!)
+        }
+    }
+
+    func saveSetting() {
+        if let style = UserDefaults.standard.string(forKey: SettingKey.syntaxHighlight), style == selectedStyle { return }
+        UserDefaults.standard.set(selectedStyle, forKey: SettingKey.syntaxHighlight)
+        NotificationCenter.default.post(name: .MarkdownViewSyntaxHighlightSettingDidChange, object: self, userInfo: [SettingKey.syntaxHighlight: selectedStyle])
     }
 }
 
@@ -52,8 +70,8 @@ extension SyntaxHighlightViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension SyntaxHighlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let style = styles[indexPath.row]
-        markdownView.change(syntaxHighlight: MarkdownView.SyntaxHighlight(rawValue: style)!)
+        selectedStyle = styles[indexPath.row]
+        markdownView.change(syntaxHighlight: MarkdownView.SyntaxHighlight(rawValue: selectedStyle)!)
     }
 }
 
@@ -64,12 +82,12 @@ private extension SyntaxHighlightViewController {
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.heightAnchor.constraint(equalToConstant: 140)
+            tableView.heightAnchor.constraint(equalToConstant: 160)
         ])
 
         markdownView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            markdownView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 16),
+            markdownView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 8),
             markdownView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             markdownView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             markdownView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
