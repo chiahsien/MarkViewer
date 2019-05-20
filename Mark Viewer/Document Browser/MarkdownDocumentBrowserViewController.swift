@@ -15,6 +15,9 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
         delegate = self
         allowsDocumentCreation = false
         allowsPickingMultipleItems = false
+
+        let settingItem = UIBarButtonItem(title: "⚙︎", style: .plain, target: self, action: #selector(showSettings))
+        additionalTrailingNavigationBarButtonItems = [settingItem]
     }
 
     // MARK: MarkdownDocument Presentation
@@ -33,11 +36,29 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
             self.present(coordinator, animated: true, completion: nil)
         }
     }
+
+    @objc
+    private func showSettings() {
+        let coordinator = SettingViewCoordinator()
+        coordinator.delegate = self
+        present(coordinator, animated: true, completion: nil)
+    }
 }
 
 // MARK: MarkdownDocumentViewCoordinatorDelegate
 extension MarkdownDocumentBrowserViewController: MarkdownDocumentViewCoordinatorDelegate {
     func coordinatorDidFinish(_ coordinator: MarkdownDocumentViewCoordinator) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: SettingViewCoordinatorDelegate
+extension MarkdownDocumentBrowserViewController: SettingViewCoordinatorDelegate {
+    func coordinatorDidFinish(_ coordinator: SettingViewCoordinator) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func coordinatorDidCancel(_ coordinator: SettingViewCoordinator) {
         dismiss(animated: true, completion: nil)
     }
 }
