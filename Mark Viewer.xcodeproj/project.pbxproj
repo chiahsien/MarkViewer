@@ -27,6 +27,7 @@
 		749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */; };
 		9A094794229296D100E298DE /* SettingDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A094793229296D100E298DE /* SettingDefinitions.swift */; };
 		9A094795229296D100E298DE /* SettingDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A094793229296D100E298DE /* SettingDefinitions.swift */; };
+		9A0947972292AA7300E298DE /* SettingViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0947962292AA7300E298DE /* SettingViewCoordinator.swift */; };
 		529F427E229155990021B180 /* SyntaxHighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F427D229155990021B180 /* SyntaxHighlightViewController.swift */; };
 		9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57FCB622855898006A5959 /* ThumbnailProvider.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer_Thumbnail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A094793229296D100E298DE /* SettingDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDefinitions.swift; sourceTree = "<group>"; };
+		9A0947962292AA7300E298DE /* SettingViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCoordinator.swift; sourceTree = "<group>"; };
 		529F427D229155990021B180 /* SyntaxHighlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlightViewController.swift; sourceTree = "<group>"; };
 		9A57FCB622855898006A5959 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				9A094793229296D100E298DE /* SettingDefinitions.swift */,
+				9A0947962292AA7300E298DE /* SettingViewCoordinator.swift */,
 				529F427D229155990021B180 /* SyntaxHighlightViewController.swift */,
 			);
 			path = "Setting View Controller";
@@ -401,6 +404,7 @@
 				9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */,
 				9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */,
 				9A094794229296D100E298DE /* SettingDefinitions.swift in Sources */,
+				9A0947972292AA7300E298DE /* SettingViewCoordinator.swift in Sources */,
 				529F427E229155990021B180 /* SyntaxHighlightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
