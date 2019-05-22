@@ -17,6 +17,7 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
     private var browserTransition: MarkdownDocumentBrowserTransitioningDelegate?
     private var nav: UINavigationController!
     private var documentVC: MarkdownDocumentViewController!
+    private weak var syntaxVC: SyntaxHighlightViewController?
 
     weak var delegate: MarkdownDocumentViewCoordinatorDelegate?
     var transitionController: UIDocumentBrowserTransitionController? {
@@ -50,30 +51,10 @@ final class MarkdownDocumentViewCoordinator: UIViewController {
             completion?(success)
         }
     }
-
-    private func createNavigationItemsFor(viewController: UIViewController) {
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-        viewController.navigationItem.leftBarButtonItem = doneItem
-
-        let titleLabel = UILabel()
-        titleLabel.text = viewController.title
-        titleLabel.lineBreakMode = .byTruncatingTail
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        viewController.navigationItem.titleView = titleLabel
-
-        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        space.width = 60
-        viewController.navigationItem.rightBarButtonItems = [space]
-    }
-
-    @objc private func done() {
-        documentVC.closeDocument { [unowned self] (_) in
-            self.delegate?.coordinatorDidFinish(self)
-        }
-    }
 }
 
 extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegate {
+    // MARK: MarkdownDocumentViewControllerDelegate
     func documentViewController(_ viewController: MarkdownDocumentViewController, didClickOn url: URL) {
         guard let scheme = url.scheme?.lowercased() else { return }
 
@@ -88,5 +69,49 @@ extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegat
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         }
+    }
+
+    // MARK: Private Functions for MarkdownDocumentViewController
+    private func createNavigationItemsFor(viewController: MarkdownDocumentViewController) {
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        viewController.navigationItem.leftBarButtonItem = doneItem
+
+        let titleLabel = UILabel()
+        titleLabel.text = viewController.title
+        titleLabel.lineBreakMode = .byTruncatingTail
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        viewController.navigationItem.titleView = titleLabel
+
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 60
+
+        let settingItem = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "Setting"), style: .plain, target: self, action: #selector(showSettings))
+
+        viewController.navigationItem.rightBarButtonItems = [settingItem, space]
+    }
+
+    @objc private func done() {
+        documentVC.closeDocument { [unowned self] (_) in
+            self.delegate?.coordinatorDidFinish(self)
+        }
+    }
+
+    @objc private func showSettings() {
+        let vc = SyntaxHighlightViewController()
+        createNavigationItemsFor(viewController: vc)
+        nav.pushViewController(vc, animated: true)
+        syntaxVC = vc
+    }
+}
+
+private extension MarkdownDocumentViewCoordinator {
+    // MARK: Private Functions for SyntaxHighlightViewController
+    func createNavigationItemsFor(viewController: SyntaxHighlightViewController) {
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSetting))
+        viewController.navigationItem.rightBarButtonItem = saveItem
+    }
+    @objc func saveSetting() {
+        syntaxVC?.saveSetting()
+        nav.popViewController(animated: true)
     }
 }

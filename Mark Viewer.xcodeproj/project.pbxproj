@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A050DEC2281732100806F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEB2281732100806F88 /* AppDelegate.swift */; };
 		9A050DF72281732200806F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF62281732200806F88 /* Assets.xcassets */; };
-		9A57FCC222855D0E006A5959 /* Default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* Default.bundle */; };
-		9A943CDE2282D72900F332AE /* Default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* Default.bundle */; };
 		9A050DFA2281732200806F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF82281732200806F88 /* LaunchScreen.storyboard */; };
 		9A050DF52281732100806F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A050DF32281732100806F88 /* Main.storyboard */; };
 		9A57FCBB22855898006A5959 /* Mark Viewer Thumbnail.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9A57FCB422855898006A5959 /* Mark Viewer Thumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -21,10 +19,16 @@
 		9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
 		9A57FCC122855CDB006A5959 /* MarkdownDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */; };
 		9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */; };
+		9A57FCC222855D0E006A5959 /* MarkdownView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* MarkdownView.bundle */; };
+		9A943CDE2282D72900F332AE /* MarkdownView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A943CDD2282D72900F332AE /* MarkdownView.bundle */; };
 		9A57FCC322855D13006A5959 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8745522840B4D00193D53 /* MarkdownView.swift */; };
 		7E2B4C4225C85E0E93CCEC32 /* Pods_Common_Pods_Mark_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */; };
 		749B25F095CFF6507693CBAA /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */; };
+		9A094794229296D100E298DE /* SettingDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A094793229296D100E298DE /* SettingDefinitions.swift */; };
+		9A094795229296D100E298DE /* SettingDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A094793229296D100E298DE /* SettingDefinitions.swift */; };
+		9A0947972292AA7300E298DE /* SettingViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0947962292AA7300E298DE /* SettingViewCoordinator.swift */; };
+		529F427E229155990021B180 /* SyntaxHighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F427D229155990021B180 /* SyntaxHighlightViewController.swift */; };
 		9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57FCB622855898006A5959 /* ThumbnailProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +61,6 @@
 		9A050DF92281732200806F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A050DEB2281732100806F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A050DF62281732200806F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9A943CDD2282D72900F332AE /* Default.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Default.bundle; sourceTree = "<group>"; };
 		9A050DFB2281732200806F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A57FCB822855898006A5959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A57FCB422855898006A5959 /* Mark Viewer Thumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mark Viewer Thumbnail.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +70,7 @@
 		9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		9A050DEF2281732100806F88 /* MarkdownDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewController.swift; sourceTree = "<group>"; };
 		9A8212A1228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocumentViewCoordinator.swift; sourceTree = "<group>"; };
+		9A943CDD2282D72900F332AE /* MarkdownView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MarkdownView.bundle; sourceTree = "<group>"; };
 		9AE8745522840B4D00193D53 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		B09AE8FB1250B7092CFAE181 /* Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer Thumbnail/Pods-Common Pods-Mark Viewer Thumbnail.debug.xcconfig"; sourceTree = "<group>"; };
 		750F737E5661C3C5FB61694B /* Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig"; path = "Target Support Files/Pods-Common Pods-Mark Viewer Thumbnail/Pods-Common Pods-Mark Viewer Thumbnail.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +80,9 @@
 		545638D9939BC550B13C4F97 /* Pods-Mark Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark Viewer.release.xcconfig"; path = "Target Support Files/Pods-Mark Viewer/Pods-Mark Viewer.release.xcconfig"; sourceTree = "<group>"; };
 		C30AEDC4F04FA832F7D2B1AD /* Pods_Common_Pods_Mark_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95ED72E396126D5B1E515211 /* Pods_Common_Pods_Mark_Viewer_Thumbnail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common_Pods_Mark_Viewer_Thumbnail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A094793229296D100E298DE /* SettingDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDefinitions.swift; sourceTree = "<group>"; };
+		9A0947962292AA7300E298DE /* SettingViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCoordinator.swift; sourceTree = "<group>"; };
+		529F427D229155990021B180 /* SyntaxHighlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlightViewController.swift; sourceTree = "<group>"; };
 		9A57FCB622855898006A5959 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,10 +122,20 @@
 		5273915B2281E444003370D6 /* Markdown View */ = {
 			isa = PBXGroup;
 			children = (
-				9A8212A72282D6B4009B5AE5 /* Theme */,
+				9A943CDD2282D72900F332AE /* MarkdownView.bundle */,
 				9AE8745522840B4D00193D53 /* MarkdownView.swift */,
 			);
 			path = "Markdown View";
+			sourceTree = "<group>";
+		};
+		529F427C2291553D0021B180 /* Setting View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A094793229296D100E298DE /* SettingDefinitions.swift */,
+				9A0947962292AA7300E298DE /* SettingViewCoordinator.swift */,
+				529F427D229155990021B180 /* SyntaxHighlightViewController.swift */,
+			);
+			path = "Setting View Controller";
 			sourceTree = "<group>";
 		};
 		7AA06DC8B4B0FF69F236277D /* Frameworks */ = {
@@ -156,6 +173,7 @@
 				9A8212A3228280CC009B5AE5 /* Document Browser */,
 				9A050E012281772200806F88 /* Document View Controller */,
 				5273915B2281E444003370D6 /* Markdown View */,
+				529F427C2291553D0021B180 /* Setting View Controller */,
 				9A050E022281776800806F88 /* Supporting Files */,
 				9A050DEB2281732100806F88 /* AppDelegate.swift */,
 				9A050DFB2281732200806F88 /* Info.plist */,
@@ -199,14 +217,6 @@
 				9A050DED2281732100806F88 /* MarkdownDocumentBrowserViewController.swift */,
 			);
 			path = "Document Browser";
-			sourceTree = "<group>";
-		};
-		9A8212A72282D6B4009B5AE5 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				9A943CDD2282D72900F332AE /* Default.bundle */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A050DF72281732200806F88 /* Assets.xcassets in Resources */,
-				9A943CDE2282D72900F332AE /* Default.bundle in Resources */,
 				9A050DFA2281732200806F88 /* LaunchScreen.storyboard in Resources */,
 				9A050DF52281732100806F88 /* Main.storyboard in Resources */,
+				9A943CDE2282D72900F332AE /* MarkdownView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A57FCC222855D0E006A5959 /* Default.bundle in Resources */,
+				9A57FCC222855D0E006A5959 /* MarkdownView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +403,9 @@
 				9A050DF02281732100806F88 /* MarkdownDocumentViewController.swift in Sources */,
 				9A8212A2228272E1009B5AE5 /* MarkdownDocumentViewCoordinator.swift in Sources */,
 				9AE8745622840B4D00193D53 /* MarkdownView.swift in Sources */,
+				9A094794229296D100E298DE /* SettingDefinitions.swift in Sources */,
+				9A0947972292AA7300E298DE /* SettingViewCoordinator.swift in Sources */,
+				529F427E229155990021B180 /* SyntaxHighlightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +416,7 @@
 				9A57FCC022855CC7006A5959 /* MarkdownDocument.swift in Sources */,
 				9A57FCC122855CDB006A5959 /* MarkdownDocumentViewController.swift in Sources */,
 				9A57FCC322855D13006A5959 /* MarkdownView.swift in Sources */,
+				9A094795229296D100E298DE /* SettingDefinitions.swift in Sources */,
 				9A57FCB722855898006A5959 /* ThumbnailProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
