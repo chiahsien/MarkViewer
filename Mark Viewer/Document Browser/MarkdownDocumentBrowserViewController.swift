@@ -16,7 +16,7 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
         allowsDocumentCreation = false
         allowsPickingMultipleItems = false
 
-        let settingItem = UIBarButtonItem(title: "⚙︎", style: .plain, target: self, action: #selector(showSettings))
+        let settingItem = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "Setting"), style: .plain, target: self, action: #selector(showSettings))
         additionalTrailingNavigationBarButtonItems = [settingItem]
     }
 

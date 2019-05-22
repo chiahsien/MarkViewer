@@ -85,7 +85,7 @@ extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegat
         let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         space.width = 60
 
-        let settingItem = UIBarButtonItem(title: "⚙︎", style: .plain, target: self, action: #selector(showSettings))
+        let settingItem = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "Setting"), style: .plain, target: self, action: #selector(showSettings))
 
         viewController.navigationItem.rightBarButtonItems = [settingItem, space]
     }
