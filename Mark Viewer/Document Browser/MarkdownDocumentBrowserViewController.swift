@@ -22,6 +22,16 @@ final class MarkdownDocumentBrowserViewController: UIDocumentBrowserViewControll
 
     // MARK: MarkdownDocument Presentation
     func presentDocument(at documentURL: URL) {
+        if presentedViewController != nil {
+            dismiss(animated: false) {
+                self._presentDocument(at: documentURL)
+            }
+        } else {
+            _presentDocument(at: documentURL)
+        }
+    }
+
+    private func _presentDocument(at documentURL: URL) {
         let coordinator = MarkdownDocumentViewCoordinator()
         coordinator.loadViewIfNeeded()
 
