@@ -22,10 +22,20 @@ final class MarkdownView: WKWebView {
         return self.bundle.url(forResource: "index", withExtension: "html")!
     }()
     private var markdownToHTMLString: String?
-    private var syntaxHighlight: SyntaxHighlight = .google
+    private lazy var syntaxHighlight: SyntaxHighlight = {
+        if let style = UserDefaults.standard.string(forKey: SettingKey.syntaxHighlight) {
+            return SyntaxHighlight(rawValue: style)!
+        } else {
+            return SyntaxHighlight.github
+        }
+    }()
     private var lastContentOffset = CGPoint.zero
 
     var openURLHandler: ((URL) -> Void)?
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     init(frame: CGRect) {
         let url = Bundle.main.url(forResource: "MarkdownView", withExtension: "bundle")!
@@ -33,6 +43,8 @@ final class MarkdownView: WKWebView {
 
         super.init(frame: frame, configuration: WKWebViewConfiguration())
         navigationDelegate = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(syntaxHighlightSettingDidChange(_:)), name: .MarkdownViewSyntaxHighlightSettingDidChange, object: nil)
     }
 
     required public init?(coder: NSCoder) {
@@ -73,6 +85,12 @@ private extension MarkdownView {
         template = template.replacingOccurrences(of: "${SYNTAX_HIGHLIGHT}$", with: syntaxHighlight.rawValue)
         template = template.replacingOccurrences(of: "${BODY}$", with: htmlString)
         return template
+    }
+
+    @objc func syntaxHighlightSettingDidChange(_ note: NSNotification) {
+        if let style = note.userInfo?[SettingKey.syntaxHighlight], let highlight = SyntaxHighlight(rawValue: style as! String) {
+            change(syntaxHighlight: highlight)
+        }
     }
 }
 
