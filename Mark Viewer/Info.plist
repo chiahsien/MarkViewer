@@ -7,17 +7,44 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>md</string>
+				<string>markdown</string>
+			</array>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>text/x-markdown</string>
+			</array>
 			<key>CFBundleTypeName</key>
 			<string>Markdown Document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSHandlerRank</key>
-			<string>Owner</string>
+			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.nelson.markdown</string>
+				<string>net.daringfireball.markdown</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>text/plain</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Plain Text</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.plain-text</string>
 			</array>
 		</dict>
 	</array>
@@ -72,7 +99,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>com.nelson.markdown</string>
+			<string>net.daringfireball.markdown</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -82,7 +109,11 @@
 					<string>markdown</string>
 					<string>MARKDOWN</string>
 				</array>
+				<key>public.mime-type</key>
+				<string>text/x-markdown</string>
 			</dict>
+			<key>UTTypeReferenceURL</key>
+			<string>http://daringfireball.net/projects/markdown/syntax</string>
 		</dict>
 	</array>
 </dict>
