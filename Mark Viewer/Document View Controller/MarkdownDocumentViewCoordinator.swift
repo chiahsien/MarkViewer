@@ -82,12 +82,8 @@ extension MarkdownDocumentViewCoordinator: MarkdownDocumentViewControllerDelegat
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         viewController.navigationItem.titleView = titleLabel
 
-        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        space.width = 60
-
         let settingItem = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "Setting"), style: .plain, target: self, action: #selector(showSettings))
-
-        viewController.navigationItem.rightBarButtonItems = [settingItem, space]
+        viewController.navigationItem.rightBarButtonItems = [settingItem]
     }
 
     @objc private func done() {

@@ -41,8 +41,10 @@ final class SyntaxHighlightViewController: UIViewController {
         setupConstraints()
 
         if let index = styles.firstIndex(of: selectedStyle) {
-            tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .middle)
-            markdownView.change(syntaxHighlight: MarkdownView.SyntaxHighlight(rawValue: selectedStyle)!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .middle)
+                self.markdownView.change(syntaxHighlight: MarkdownView.SyntaxHighlight(rawValue: self.selectedStyle)!)
+            }
         }
     }
 
