@@ -60,8 +60,8 @@ final class MarkdownView: WKWebView {
     func change(syntaxHighlight: SyntaxHighlight) {
         if self.syntaxHighlight == syntaxHighlight { return }
         self.syntaxHighlight = syntaxHighlight
-        lastContentOffset = scrollView.contentOffset
-        try? loadHTMLView(markdownToHTMLString, syntaxHighlight: syntaxHighlight)
+        let js = "changeCSS('\(syntaxHighlight.rawValue)')"
+        evaluateJavaScript(js, completionHandler: nil)
     }
 
     func loadCodeSample() {
