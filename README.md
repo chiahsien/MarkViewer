@@ -4,7 +4,7 @@
 
 **Mark Viewer** is a [document based app](https://developer.apple.com/documentation/uikit/view_controllers/adding_a_document_browser_to_your_app), its main purpose is to view [Markdown](https://en.wikipedia.org/wiki/Markdown) files.
 
-### Requirements
+### Environment Requirements
 
 - Xcode 10
 - Swift 5
@@ -19,11 +19,14 @@
 4. Change the `Bundle Identifier` and `Signing` settings.
 5. Run the project.
 
-### Todo
+### Todo List
 
 Below are some items in my todo list, **contributions are more than welcome!**
 
 - [x] Beautiful app icons and splash image.
-- [ ] Preview and Thumbnail extensions.
-- [x] Ability to switch themes.
+- [ ] Preview and Thumbnail extensions. (I've tried to implement the thumbnail extension, but I don't know why it doesn't work. Help needed!)
+- [x] Ability to switch themes on the fly.
+- [ ] Support both iPhone and iPad.
+- [ ] Localization.
+- [ ] Better error handling.
 - [ ] Edit markdown files?
