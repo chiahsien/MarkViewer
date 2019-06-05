@@ -29,7 +29,6 @@ final class MarkdownView: WKWebView {
             return SyntaxHighlight.github
         }
     }()
-    private var lastContentOffset = CGPoint.zero
 
     var openURLHandler: ((URL) -> Void)?
 
@@ -52,7 +51,6 @@ final class MarkdownView: WKWebView {
     }
 
     func update(markdownString: String) {
-        lastContentOffset = .zero
         markdownToHTMLString = try? EFMarkdown().markdownToHTML(markdownString, options: [.default, .smart, .githubPreLang])
         try? loadHTMLView(markdownToHTMLString, syntaxHighlight: syntaxHighlight)
     }
@@ -119,14 +117,6 @@ extension MarkdownView: WKNavigationDelegate {
     @available(iOSApplicationExtension, unavailable)
     func openURL(url: URL) {
         openURLHandler?(url)
-    }
-
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        /// Restore last content offset.
-        guard lastContentOffset != .zero else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.03) {
-            self.scrollView.setContentOffset(self.lastContentOffset, animated: false)
-        }
     }
 }
 
